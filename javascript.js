@@ -1,6 +1,6 @@
 async function load () { 
     const lista = document.getElementById("4165");
-    const link = `https://pokeapi.co/api/v2/pokemon?limit=${[20, 40, 65, 591, 327, 1000, 5000, 6000, 100000][Math.floor(Math.random() * 5)]}`
+    const link = `https://pokeapi.co/api/v2/pokemon?limit=1008`
     const _fetch = await fetch(link).then(async (_) => _.json());
     const pokemon = await Promise.all(_fetch.results.map(async ({ name, url }) => {
         const pokemonReal = await fetch(url).then(async (i) => i.json());
